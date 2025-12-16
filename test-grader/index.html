@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Corrector de Tests</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>📝 Corrector de Tests</h1>
+        <p class="subtitle">Calcula tu nota automáticamente</p>
+        
+        <div class="card">
+            <h2>Selecciona la asignatura</h2>
+            <select id="subject" class="subject-select">
+                <option value="">-- Selecciona una asignatura --</option>
+                <option value="procesos">Procesos y contextos educativos</option>
+                <option value="sociedad">Sociedad, familia y educación</option>
+                <option value="aprendizaje">Aprendizaje y desarrollo de la personalidad</option>
+            </select>
+        </div>
+
+        <div class="card">
+            <h2>Pega tus respuestas</h2>
+            <p class="info">Formato: 01: A, 02: B, etc. (una por línea o separadas por comas)</p>
+            <textarea id="studentAnswers" placeholder="01: C&#10;02: D&#10;03: B&#10;04: B&#10;05: D&#10;..."></textarea>
+        </div>
+
+        <button id="calculateBtn" class="btn-calculate">Calcular Nota</button>
+
+        <div id="results" class="results hidden">
+            <div class="result-card">
+                <h2>📊 Resultados</h2>
+                <div class="score-display">
+                    <div class="score-number" id="finalScore">0.00</div>
+                    <div class="score-label">Puntuación Final</div>
+                </div>
+                <div class="score-display nota-sobre-10">
+                    <div class="score-number" id="notaSobre10" style="font-size: 2.5rem; color: #667eea;">0.00</div>
+                    <div class="score-label">Nota sobre 10</div>
+                </div>
+                <div class="stats">
+                    <div class="stat-item correct">
+                        <span class="stat-number" id="correctCount">0</span>
+                        <span class="stat-label">Correctas</span>
+                    </div>
+                    <div class="stat-item incorrect">
+                        <span class="stat-number" id="incorrectCount">0</span>
+                        <span class="stat-label">Incorrectas</span>
+                    </div>
+                    <div class="stat-item blank">
+                        <span class="stat-number" id="blankCount">0</span>
+                        <span class="stat-label">En Blanco</span>
+                    </div>
+                </div>
+                <div id="detailsContainer" class="details-container"></div>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
